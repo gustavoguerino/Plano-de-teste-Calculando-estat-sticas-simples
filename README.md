@@ -7,10 +7,11 @@ Problema - http://dojopuzzles.com/problemas/exibe/calculando-estatisticas-simple
 
 ## Plano de teste - valor mínimo
 
-| Entrada             | Condição                            | Classes Válidas                 | Classes Inválidas          |
-| -------------       | -------------                       | --------------------------------| ----------------           |
-| seqNumeros          | seqNumeros [- infinito, + infinito] | seqNumeros = int ---------------| seqNumeros != int ---------|
-|                     |                                     | menorValor = seqNumero          | menor              |
+| Entrada             | Condição                            | Classes Válidas                  | Classes Inválidas             |
+| -------------       | -------------                       | -------------------------------- | ----------------              |
+| seqNumeros          | sizeSqn(seqNumeros)                 | sizeSqn(seqNumeros) != NULL      | sizeSqn(seqNumeros) == NULL   |
+| numeros             | sizeSqn(seqNumeros) == 1            | sizeSqn(seqNumeros) == numeros   | sizeSqn(seqNumeros) != numeros|
+|                     | seqNumeros é do tipo int            | valorMínimo(seqNumero) == int   | valorMínimo(seqNumero) != int |
 ||| ano % 100 = 0 && ano % 400 == 0| ano % 400 != 0 |
 || ano é do tipo Int | tipo(ano) == Int | tipo(ano) != Int |
 
