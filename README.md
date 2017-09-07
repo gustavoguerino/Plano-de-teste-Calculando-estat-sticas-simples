@@ -35,7 +35,7 @@ is_size("7.0") # Lançará uma exceção.
 ```
 
 # Dentro da função sizeSqn() 
-  #### O sistema pedirá para o usuário inserir os valores.
+  #### O sistema pedirá ao usuário para inserir os valores.
   
   ### 3º caso de teste (Tipo valor igual a int)
 
