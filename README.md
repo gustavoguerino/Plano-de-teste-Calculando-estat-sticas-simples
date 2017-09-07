@@ -10,9 +10,9 @@ Problema - http://dojopuzzles.com/problemas/exibe/calculando-estatisticas-simple
 
 | Entrada             | Condição                            | Classes Válidas                  | Classes Inválidas             |
 | -------------       | -------------                       | -------------------------------- | ----------------              |
-| seqNumeros          | seqNumeros ]- infinto,+ infinito]   | sizeSqn(seqNumeros) != NULL      | sizeSqn(seqNumeros) == NULL   |
+| seqNumeros          | seqNumeros ]- infinto,+ infinito]   | sizeSqn(seqNumeros) != NULL AND sizeSqn(seqNumeros) > 1  |sizeSqn(seqNumeros) == 1   |
 |                     | seqNumeros é do tipo int            | tipo(seqNumeros) == int          | tipo(seqNumeros) != int       |
-|                     |                                     |                                  |                               |
+| valor               | valor é do tipo int                 | tipo(valor) == int               | tipo(valor) != int       |
 
 ```java
 public boolean is_sizeSqn(seqNumeros):
@@ -36,42 +36,83 @@ is_size("7.0") # Lançará uma exceção.
 
 # Dentro da função sizeSqn() 
   #### O sistema pedirá para o usuário inserir os valores.
+  
+  ### 3º caso de teste (Tipo valor igual a int)
+
+```java
+valor(2) == True
+```
+  ### 4º caso de teste (Tipo valor diferente de int)
+
+```java
+valor("testeDeSoftware") # Lançará uma exceção.
+```
+```java
+valor("8.0") # Lançará uma exceção.
+```
+  
   #### Assim que o usuário terminar de inserir, o sistema informará os dados com as seguintes funções.
 -----------------------------------------------------------------------------------------------------------------------------------------
 ## Plano de teste - valor mínimo
 
-| Entrada             | Condição                            | Classes Válidas                  | Classes Inválidas             |
+| Saída               | Condição                            | Classes Válidas                  | Classes Inválidas             |
 | -------------       | -------------                       | -------------------------------- | ----------------              |
-| seqNumeros          | sizeSqn(seqNumeros)                 | sizeSqn(seqNumeros) != NULL      | sizeSqn(seqNumeros) == NULL   |
-| numeros             | sizeSqn(seqNumeros) == 1            | sizeSqn(seqNumeros) == numeros   | sizeSqn(seqNumeros) != numeros|
-|                     | seqNumeros é do tipo int            | valorMínimo(seqNumero) == int   | valorMínimo(seqNumero) != int |
-||| ano % 100 = 0 && ano % 400 == 0| ano % 400 != 0 |
-|| ano é do tipo Int | tipo(ano) == Int | tipo(ano) != Int |
+| minimo               |  minimo ] menor valor]             | minimo < seqNumeros              | minimo > seqNumeros           |
 
+  ### 5º caso de teste (minimo é menor valor da sequencia)
+ ```java
+minimo < sqlNumeros == true.
+```
+
+  ### 6º caso de teste (minimo é diferente do menor valor da sequencia)
+ ```java
+minimo < sqlNumeros == false.
+```
 
 ## Plano de teste - valor máximo
 
-| Entrada             | Condição                            | Classes Válidas                 | Classes Inválidas          |
-| -------------       | -------------                       | --------------------------------| ----------------           |
-| seqNumeros          | seqNumeros [- infinito, + infinito] | seqNumeros = int ---------------| seqNumeros != int ---------|
-|                     |                                     | menorValor = seqNumero          | menor              |
-||| ano % 100 = 0 && ano % 400 == 0| ano % 400 != 0 |
-|| ano é do tipo Int | tipo(ano) == Int | tipo(ano) != Int |
+| Saída               | Condição                            | Classes Válidas                  | Classes Inválidas             |
+| -------------       | -------------                       | -------------------------------- | ----------------              |
+| maximo              |  maximo ] maior valor]              | maximo > seqNumeros              | maximo <  seqNumeros          |
+
+  ### 7º caso de teste (maximo é maior valor da sequencia)
+ ```java
+maximo > sqlNumeros == true.
+```
+
+  ### 8º caso de teste (maximo é diferente do maior valor da sequencia)
+ ```java
+maximo < sqlNumeros == false.
+```
 
 ## Plano de teste - número de elementos na seqüência
 
-| Entrada             | Condição                            | Classes Válidas                 | Classes Inválidas          |
-| -------------       | -------------                       | --------------------------------| ----------------           |
-| seqNumeros          | seqNumeros [- infinito, + infinito] | seqNumeros = int ---------------| seqNumeros != int ---------|
-|                     |                                     | menorValor = seqNumero          | menor              |
-||| ano % 100 = 0 && ano % 400 == 0| ano % 400 != 0 |
-|| ano é do tipo Int | tipo(ano) == Int | tipo(ano) != Int |
+| Saída               | Condição                            | Classes Válidas                  | Classes Inválidas             |
+| -------------       | -------------                       | -------------------------------- | ----------------              |
+| seq                 |  seq ] +sqlNumeros]                 | seq == seqNumeros                | seq != seqNumeros             |
 
-## Plano de teste - valor mínimo
+  ### 9º caso de teste (seq possui o mesmo tamanho da sequencia)
+ ```java
+seq == sqlNumeros == true.
+```
 
-| Entrada             | Condição                            | Classes Válidas                 | Classes Inválidas          |
-| -------------       | -------------                       | --------------------------------| ----------------           |
-| seqNumeros          | seqNumeros [- infinito, + infinito] | seqNumeros = int ---------------| seqNumeros != int ---------|
-|                     |                                     | menorValor = seqNumero          | menor              |
-||| ano % 100 = 0 && ano % 400 == 0| ano % 400 != 0 |
-|| ano é do tipo Int | tipo(ano) == Int | tipo(ano) != Int |
+  ### 10º caso de teste (seq não possui o mesmo tamanho da sequencia)
+ ```java
+seq != sqlNumeros == false.
+```
+
+## Plano de teste - valor médio
+
+| Saída               | Condição                            | Classes Válidas                  | Classes Inválidas             |
+| -------------       | -------------                       | -------------------------------- | ----------------              |
+| media               |  media ] +valor]                    | media == (+= valor / 2)          | media != (+= valor / 2)       |
+
+  ### 11º caso de teste (media é a soma dos valores dividido por 2)
+ ```java
+media(13) == 6.5.
+```
+
+  ### 12º caso de teste (media é a soma dos valores dividido por 2, que possui o resultado diferente)
+ ```java
+media(12) != 6.
+```
