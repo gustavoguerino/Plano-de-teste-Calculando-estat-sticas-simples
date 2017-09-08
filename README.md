@@ -61,12 +61,12 @@ valor("8.0") # Lançará uma exceção.
 
   ### 5º caso de teste (minimo é menor valor da sequencia)
  ```java
-minimo < sqlNumeros == true.
+minimo < sqlNumeros.
 ```
 
   ### 6º caso de teste (minimo é diferente do menor valor da sequencia)
  ```java
-minimo < sqlNumeros == false.
+minimo > sqlNumeros.
 ```
 
 ## Plano de teste - valor máximo
@@ -77,12 +77,12 @@ minimo < sqlNumeros == false.
 
   ### 7º caso de teste (maximo é maior valor da sequencia)
  ```java
-maximo > sqlNumeros == true.
+maximo > sqlNumeros.
 ```
 
   ### 8º caso de teste (maximo é diferente do maior valor da sequencia)
  ```java
-maximo < sqlNumeros == false.
+maximo < sqlNumeros.
 ```
 
 ## Plano de teste - número de elementos na seqüência
@@ -93,12 +93,12 @@ maximo < sqlNumeros == false.
 
   ### 9º caso de teste (seq possui o mesmo tamanho da sequencia)
  ```java
-seq == sqlNumeros == true.
+seq == sqlNumeros.
 ```
 
   ### 10º caso de teste (seq não possui o mesmo tamanho da sequencia)
  ```java
-seq != sqlNumeros == false.
+seq != sqlNumeros.
 ```
 
 ## Plano de teste - valor médio
