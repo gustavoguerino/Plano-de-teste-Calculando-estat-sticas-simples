@@ -6,7 +6,7 @@ class TesteEstatisticas(unittest.TestCase):
         self.assertTrue(is_sizeSqn(1))
         
     def teste_seqnumeros_not_int(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             is_sizeSqn("testeDeSoftware") 
            
 if __name__ == '__main__':
