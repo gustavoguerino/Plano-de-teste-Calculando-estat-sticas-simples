@@ -39,6 +39,9 @@ class TesteEstatisticas(unittest.TestCase):
     # 
     # Continuaremos com os testes ignorando o resultado dos dois primeiros
     #
+    # Todos os testes apartir do 5 são verificando resultados, sem exemplos de entrada, e
+    # verificando o resultado das operações em um retorno que deveria ser boolean.
+    #
            
 if __name__ == '__main__':
     unittest.main()
