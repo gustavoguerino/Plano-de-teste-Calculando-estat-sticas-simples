@@ -8,6 +8,7 @@ class TesteEstatisticas(unittest.TestCase):
     def teste_seqnumeros_not_int(self):
         with self.assertRaises(TypeError):
             is_sizeSqn("testeDeSoftware") 
+            is_sizeSqn("7.0") 
            
 if __name__ == '__main__':
     unittest.main()
