@@ -19,6 +19,14 @@ class TesteEstatisticas(unittest.TestCase):
         with io.BytesIO(data) as sys.stdin:
             self.assertTrue(is_sizeSqn(1))
         sys.stdin = sys.__stdin__
+
+    @timeout_decorator.timeout(1)
+    def test_valor_not_int(self):
+        data = "testeDeSoftware"
+        with io.BytesIO(data) as sys.stdin:
+            with self.assertRaises(TypeError):
+                self.assertTrue(is_sizeSqn(1))
+        sys.stdin = sys.__stdin__
            
 if __name__ == '__main__':
     unittest.main()
